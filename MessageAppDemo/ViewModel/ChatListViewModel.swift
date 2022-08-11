@@ -20,12 +20,12 @@ struct ChatListViewModel {
     }
     
     func loadChatList(){
-        let user1 = User(id: "1", name: "山田太郎")
-        let user2 = User(id: "2", name: "田中花子")
+        let user1 = User(id: "1", name: "山田太郎", avatar_url: "https://robohash.org/taro")
+        let user2 = User(id: "2", name: "田中花子",avatar_url: "https://robohash.org/hanako")
         messages.accept( [
             Message(id: "1", content: "こんにちは",send_at: Date(), sender:user1),
-            Message(id: "2", content: "こんにちは",send_at: Date(), sender:user2),
-            Message(id: "3", content: "こんにちは",send_at: Date(), sender:user1),
+            Message(id: "2", content: "今日はいい天気ですね",send_at: Date(), sender:user2),
+            Message(id: "3", content: "こんばんは",send_at: Date(), sender:user1),
         ])
     }
 }

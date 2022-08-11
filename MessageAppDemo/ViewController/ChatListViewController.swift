@@ -28,16 +28,14 @@ class ChatListViewController: UIViewController {
     }
     
     func configure(){
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(UINib(nibName:"ChatListCell", bundle: nil), forCellReuseIdentifier: "cell")
         
         dataSource = UITableViewDiffableDataSource<Int, Message>(tableView: tableView, cellProvider:  {
             (tableView: UITableView, indexPath: IndexPath, message: Message) -> UITableViewCell? in
             // configure and return cell
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-            var contentConfiguration = cell.defaultContentConfiguration()
-            contentConfiguration.text = message.content
-            cell.contentConfiguration = contentConfiguration
-            return cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ChatListCell
+       
+            return cell.configure(with: message)
         })
         
         snapshot.appendSections([0])
