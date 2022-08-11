@@ -10,7 +10,7 @@
 		3683F175B0607E1CC64AB325 /* Pods_MessageAppDemo_MessageAppDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F048197981E49D7C7DB60C /* Pods_MessageAppDemo_MessageAppDemoUITests.framework */; };
 		4E6ADCC728A4B61100ED429F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6ADCC628A4B61100ED429F /* AppDelegate.swift */; };
 		4E6ADCC928A4B61100ED429F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6ADCC828A4B61100ED429F /* SceneDelegate.swift */; };
-		4E6ADCCB28A4B61100ED429F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6ADCCA28A4B61100ED429F /* ViewController.swift */; };
+		4E6ADCCB28A4B61100ED429F /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6ADCCA28A4B61100ED429F /* ChatListViewController.swift */; };
 		4E6ADCCE28A4B61100ED429F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E6ADCCC28A4B61100ED429F /* Main.storyboard */; };
 		4E6ADCD028A4B61200ED429F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E6ADCCF28A4B61200ED429F /* Assets.xcassets */; };
 		4E6ADCD328A4B61200ED429F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E6ADCD128A4B61200ED429F /* LaunchScreen.storyboard */; };
@@ -46,7 +46,7 @@
 		4E6ADCC328A4B61100ED429F /* MessageAppDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessageAppDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E6ADCC628A4B61100ED429F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E6ADCC828A4B61100ED429F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4E6ADCCA28A4B61100ED429F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4E6ADCCA28A4B61100ED429F /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		4E6ADCCD28A4B61100ED429F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4E6ADCCF28A4B61200ED429F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E6ADCD228A4B61200ED429F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -118,9 +118,9 @@
 		4E6ADCC528A4B61100ED429F /* MessageAppDemo */ = {
 			isa = PBXGroup;
 			children = (
+				4E6ADCFA28A4BD6800ED429F /* ViewController */,
 				4E6ADCC628A4B61100ED429F /* AppDelegate.swift */,
 				4E6ADCC828A4B61100ED429F /* SceneDelegate.swift */,
-				4E6ADCCA28A4B61100ED429F /* ViewController.swift */,
 				4E6ADCCC28A4B61100ED429F /* Main.storyboard */,
 				4E6ADCCF28A4B61200ED429F /* Assets.xcassets */,
 				4E6ADCD128A4B61200ED429F /* LaunchScreen.storyboard */,
@@ -146,6 +146,14 @@
 			path = MessageAppDemoUITests;
 			sourceTree = "<group>";
 		};
+		4E6ADCFA28A4BD6800ED429F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4E6ADCCA28A4B61100ED429F /* ChatListViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		51306D7D2EDA59D33607FB56 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,7 +174,6 @@
 				5AF1983B22248EDC391830EC /* Pods-MessageAppDemoTests.debug.xcconfig */,
 				38DD867DD3C536D867896CAF /* Pods-MessageAppDemoTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -415,7 +422,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E6ADCCB28A4B61100ED429F /* ViewController.swift in Sources */,
+				4E6ADCCB28A4B61100ED429F /* ChatListViewController.swift in Sources */,
 				4E6ADCC728A4B61100ED429F /* AppDelegate.swift in Sources */,
 				4E6ADCC928A4B61100ED429F /* SceneDelegate.swift in Sources */,
 			);
