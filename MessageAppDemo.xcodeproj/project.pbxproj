@@ -18,6 +18,9 @@
 		4E6ADCE828A4B61200ED429F /* MessageAppDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6ADCE728A4B61200ED429F /* MessageAppDemoUITests.swift */; };
 		4E6ADCEA28A4B61200ED429F /* MessageAppDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6ADCE928A4B61200ED429F /* MessageAppDemoUITestsLaunchTests.swift */; };
 		4E6ADCF828A4B6CF00ED429F /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4E6ADCF728A4B6CF00ED429F /* MessageKit */; };
+		4E6ADCFE28A4CBC800ED429F /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6ADCFD28A4CBC800ED429F /* Message.swift */; };
+		4E6ADD0028A4CC6600ED429F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6ADCFF28A4CC6600ED429F /* User.swift */; };
+		4E6ADD0228A4CCA800ED429F /* ChatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6ADD0128A4CCA800ED429F /* ChatListViewModel.swift */; };
 		E216013A2C20DF603DA3F88D /* Pods_MessageAppDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F1ED2630E418E3094D3BAD /* Pods_MessageAppDemo.framework */; };
 		F719D49E069C8C9BBDB235C7 /* Pods_MessageAppDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EBAB29BE84844800738C0C0 /* Pods_MessageAppDemoTests.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +59,9 @@
 		4E6ADCE328A4B61200ED429F /* MessageAppDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MessageAppDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E6ADCE728A4B61200ED429F /* MessageAppDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAppDemoUITests.swift; sourceTree = "<group>"; };
 		4E6ADCE928A4B61200ED429F /* MessageAppDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAppDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4E6ADCFD28A4CBC800ED429F /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		4E6ADCFF28A4CC6600ED429F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4E6ADD0128A4CCA800ED429F /* ChatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewModel.swift; sourceTree = "<group>"; };
 		5AF1983B22248EDC391830EC /* Pods-MessageAppDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageAppDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-MessageAppDemoTests/Pods-MessageAppDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8EBAB29BE84844800738C0C0 /* Pods_MessageAppDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MessageAppDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A06E2FF2F19FFDDE65D24C /* Pods-MessageAppDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageAppDemo.release.xcconfig"; path = "Target Support Files/Pods-MessageAppDemo/Pods-MessageAppDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +124,8 @@
 		4E6ADCC528A4B61100ED429F /* MessageAppDemo */ = {
 			isa = PBXGroup;
 			children = (
+				4E6ADCFC28A4CBA900ED429F /* ViewModel */,
+				4E6ADCFB28A4CBA200ED429F /* Model */,
 				4E6ADCFA28A4BD6800ED429F /* ViewController */,
 				4E6ADCC628A4B61100ED429F /* AppDelegate.swift */,
 				4E6ADCC828A4B61100ED429F /* SceneDelegate.swift */,
@@ -152,6 +160,23 @@
 				4E6ADCCA28A4B61100ED429F /* ChatListViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		4E6ADCFB28A4CBA200ED429F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4E6ADCFD28A4CBC800ED429F /* Message.swift */,
+				4E6ADCFF28A4CC6600ED429F /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4E6ADCFC28A4CBA900ED429F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4E6ADD0128A4CCA800ED429F /* ChatListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		51306D7D2EDA59D33607FB56 /* Frameworks */ = {
@@ -422,8 +447,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E6ADD0228A4CCA800ED429F /* ChatListViewModel.swift in Sources */,
 				4E6ADCCB28A4B61100ED429F /* ChatListViewController.swift in Sources */,
+				4E6ADCFE28A4CBC800ED429F /* Message.swift in Sources */,
 				4E6ADCC728A4B61100ED429F /* AppDelegate.swift in Sources */,
+				4E6ADD0028A4CC6600ED429F /* User.swift in Sources */,
 				4E6ADCC928A4B61100ED429F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
