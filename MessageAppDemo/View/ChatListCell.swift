@@ -16,7 +16,7 @@ class ChatListCell: UITableViewCell {
     
     func configure(with message: Message)->ChatListCell{
         userNameLabel.text = message.sender.displayName
-        messageContentLabel.text = message.content
+        messageContentLabel.text = message.textContent
         let url = URL(string: message.user.avatar_url)
         do {
             let data = try Data(contentsOf: url!)

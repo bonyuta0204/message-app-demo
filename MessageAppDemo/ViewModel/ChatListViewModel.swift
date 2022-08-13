@@ -12,8 +12,8 @@ import RxCocoa
 
 struct ChatListViewModel {
     
-    var chatList: Driver<Array<Message>>
-    var messages = BehaviorRelay<Array<Message>>(value:[])
+    var chatList: Driver<[Message]>
+    var messages = BehaviorRelay<[Message]>(value:[])
     
     init() {
         chatList = messages.asDriver(onErrorJustReturn: [])
@@ -23,9 +23,9 @@ struct ChatListViewModel {
         let user1 = User(senderId: "1", displayName: "山田太郎", avatar_url: "https://robohash.org/taro")
         let user2 = User(senderId: "2", displayName: "田中花子",avatar_url: "https://robohash.org/hanako")
         messages.accept( [
-            Message(user: user1, messageId: "1", sentDate: Date(), kind: .text("hoge"), content: "こんにちは"),
-            Message(user: user2, messageId: "2", sentDate: Date(), kind: .text("hoge"), content: "こんばんは"),
-            Message(user: user1, messageId: "3", sentDate: Date(), kind: .text("hoge"), content: "Good Morning")
+            Message(user: user1, messageId: "1", sentDate: Date(), kind: .text("こんにちは"), channelId: "1" ),
+            Message(user: user2, messageId: "2", sentDate: Date(), kind: .text("こんばんは"), channelId: "2"),
+            Message(user: user1, messageId: "3", sentDate: Date(), kind: .text("GoodMorning"), channelId: "3")
 
         ])
     }

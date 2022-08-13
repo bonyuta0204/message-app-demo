@@ -19,6 +19,8 @@ struct Message: Identifiable, Hashable, MessageType{
     
     var kind: MessageKind
     
+    var channelId: String
+    
     static func == (lhs: Message, rhs: Message) -> Bool {
         lhs.messageId == rhs.messageId
     }
@@ -27,8 +29,12 @@ struct Message: Identifiable, Hashable, MessageType{
         hasher.combine(messageId)
     }
     
-    var content: String
-    
+    var textContent: String {
+        switch(kind){
+        case .text(let content): return content
+        default: return ""
+        }
+    }
     var sender: SenderType {
       user
     }

@@ -61,8 +61,12 @@ extension ChatListViewController{
 
 extension ChatListViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let message = viewModel.messages.value[indexPath.row]
-        print(message)
+        
+        let chatViewModel = ChatViewModel(channelId: viewModel.messages.value[indexPath.row].channelId)
+        let chatViewController = ChatViewController(chatViewModel)
+        chatViewModel.loadChatList()
+        navigationController?.pushViewController(chatViewController, animated: true)
+        
     }
     
 }
