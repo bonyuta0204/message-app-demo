@@ -1,5 +1,5 @@
 //
-//  ChatViewModel.swift
+//  MessageViewModel.swift
 //  MessageAppDemo
 //
 //  Created by Yuta Nakamura on 2022/08/13.
@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-struct ChatViewModel{
+struct MessageViewModel{
     let channelId: String
     
     var messages: Driver<[Message]>
@@ -20,7 +20,7 @@ struct ChatViewModel{
         messages = _messages.asDriver(onErrorJustReturn: [])
     }
     
-    func loadChatList(){
+    func loadMessageList(){
         let user1 = User(senderId: "1", displayName: "山田太郎", avatar_url: "https://robohash.org/taro")
         let user2 = User(senderId: "2", displayName: "田中花子",avatar_url: "https://robohash.org/hanako")
         _messages.accept( [

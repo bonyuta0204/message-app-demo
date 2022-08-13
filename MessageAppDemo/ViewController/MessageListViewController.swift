@@ -8,7 +8,7 @@
 import UIKit
 import RxSwift
 
-class ChatListViewController: UIViewController {
+class MessageListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -16,7 +16,7 @@ class ChatListViewController: UIViewController {
     var dataSource :UITableViewDiffableDataSource<Int, Message>!
     var snapshot = NSDiffableDataSourceSnapshot<Int, Message>()
 
-    let viewModel = ChatListViewModel()
+    let viewModel = MessageListViewModel()
     
     
     override func viewDidLoad() {
@@ -24,12 +24,12 @@ class ChatListViewController: UIViewController {
         // Do any additional setup after loading the view.
         configure()
         bind()
-        viewModel.loadChatList()
+        viewModel.loadMessageList()
     }
     
     func configure(){
         tableView.delegate = self
-        tableView.register(UINib(nibName:"ChatListCell", bundle: nil), forCellReuseIdentifier: "cell")
+        tableView.register(UINib(nibName:"MessageListCell", bundle: nil), forCellReuseIdentifier: "cell")
         
         tableView.estimatedRowHeight = 66
         tableView.rowHeight = UITableView.automaticDimension
@@ -37,7 +37,7 @@ class ChatListViewController: UIViewController {
         dataSource = UITableViewDiffableDataSource<Int, Message>(tableView: tableView, cellProvider:  {
             (tableView: UITableView, indexPath: IndexPath, message: Message) -> UITableViewCell? in
             // configure and return cell
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ChatListCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MessageListCell
        
             return cell.configure(with: message)
         })
@@ -48,9 +48,9 @@ class ChatListViewController: UIViewController {
     
 }
 
-extension ChatListViewController{
+extension MessageListViewController{
     func bind(){
-        viewModel.chatList.drive(onNext: {messages in
+        viewModel.messageList.drive(onNext: {messages in
             self.snapshot.appendItems(messages, toSection: 0)
             self.dataSource.apply(self.snapshot)
         }
@@ -59,13 +59,13 @@ extension ChatListViewController{
 }
 
 
-extension ChatListViewController: UITableViewDelegate{
+extension MessageListViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let chatViewModel = ChatViewModel(channelId: viewModel.messages.value[indexPath.row].channelId)
-        let chatViewController = ChatViewController(chatViewModel)
-        chatViewModel.loadChatList()
-        navigationController?.pushViewController(chatViewController, animated: true)
+        let messageViewModel = MessageViewModel(channelId: viewModel.messages.value[indexPath.row].channelId)
+        let messageViewController = MessageViewController(messageViewModel)
+        messageViewModel.loadMessageList()
+        navigationController?.pushViewController(messageViewController, animated: true)
         
     }
     

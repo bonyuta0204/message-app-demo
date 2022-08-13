@@ -1,5 +1,5 @@
 //
-//  ChatViewController.swift
+//  MessageViewController.swift
 //  MessageAppDemo
 //
 //  Created by Yuta Nakamura on 2022/08/13.
@@ -9,9 +9,9 @@ import Foundation
 import MessageKit
 import RxSwift
 
-class ChatViewController: MessagesViewController, MessagesDataSource {
+class MessageViewController: MessagesViewController, MessagesDataSource {
     var currentSender: SenderType
-    let viewModel: ChatViewModel
+    let viewModel: MessageViewModel
     private let disposeBag = DisposeBag()
     var messages: [Message] = []
     
@@ -25,11 +25,11 @@ class ChatViewController: MessagesViewController, MessagesDataSource {
         return messages.count
     }
     
-    init(_ viewModel: ChatViewModel){
+    init(_ viewModel: MessageViewModel){
         currentSender = User(senderId: "1", displayName: "田中太朗", avatar_url: "https://example.com")
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        viewModel.loadChatList()
+        viewModel.loadMessageList()
 
     }
     
@@ -48,15 +48,15 @@ class ChatViewController: MessagesViewController, MessagesDataSource {
     }
 }
 
-extension ChatViewController: MessagesLayoutDelegate{
+extension MessageViewController: MessagesLayoutDelegate{
     
 }
 
-extension ChatViewController: MessagesDisplayDelegate{
+extension MessageViewController: MessagesDisplayDelegate{
     
 }
 
-extension ChatViewController{
+extension MessageViewController{
     func bind(){
         viewModel.messages.drive(onNext: {messages in
             self.messages = messages

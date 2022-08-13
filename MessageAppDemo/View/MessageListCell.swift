@@ -1,5 +1,5 @@
 //
-//  ChatListCell.swift
+//  MessageListCell.swift
 //  MessageAppDemo
 //
 //  Created by Yuta Nakamura on 2022/08/11.
@@ -7,14 +7,14 @@
 
 import UIKit
 
-class ChatListCell: UITableViewCell {
+class MessageListCell: UITableViewCell {
 
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var messageContentLabel: UILabel!
     @IBOutlet weak var sendAtLabel: UILabel!
     @IBOutlet weak var avatarImage: UIImageView!
     
-    func configure(with message: Message)->ChatListCell{
+    func configure(with message: Message)->MessageListCell{
         userNameLabel.text = message.sender.displayName
         messageContentLabel.text = message.textContent
         let url = URL(string: message.user.avatar_url)

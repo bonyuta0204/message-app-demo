@@ -1,5 +1,5 @@
 //
-//  ChatListViewModel.swift
+//  MessageListViewModel.swift
 //  MessageAppDemo
 //
 //  Created by Yuta Nakamura on 2022/08/11.
@@ -10,16 +10,16 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-struct ChatListViewModel {
+struct MessageListViewModel {
     
-    var chatList: Driver<[Message]>
+    var messageList: Driver<[Message]>
     var messages = BehaviorRelay<[Message]>(value:[])
     
     init() {
-        chatList = messages.asDriver(onErrorJustReturn: [])
+        messageList = messages.asDriver(onErrorJustReturn: [])
     }
     
-    func loadChatList(){
+    func loadMessageList(){
         let user1 = User(senderId: "1", displayName: "山田太郎", avatar_url: "https://robohash.org/taro")
         let user2 = User(senderId: "2", displayName: "田中花子",avatar_url: "https://robohash.org/hanako")
         messages.accept( [
