@@ -13,7 +13,7 @@ import RxCocoa
 struct ChatListViewModel {
     
     var chatList: Driver<Array<Message>>
-    var messages = PublishRelay<Array<Message>>()
+    var messages = BehaviorRelay<Array<Message>>(value:[])
     
     init() {
         chatList = messages.asDriver(onErrorJustReturn: [])

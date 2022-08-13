@@ -28,6 +28,7 @@ class ChatListViewController: UIViewController {
     }
     
     func configure(){
+        tableView.delegate = self
         tableView.register(UINib(nibName:"ChatListCell", bundle: nil), forCellReuseIdentifier: "cell")
         
         dataSource = UITableViewDiffableDataSource<Int, Message>(tableView: tableView, cellProvider:  {
@@ -52,4 +53,13 @@ extension ChatListViewController{
         }
         ).disposed(by: disposeBag)
     }
+}
+
+
+extension ChatListViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let message = viewModel.messages.value[indexPath.row]
+        print(message)
+    }
+    
 }

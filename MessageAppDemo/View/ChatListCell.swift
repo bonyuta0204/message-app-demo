@@ -25,8 +25,6 @@ class ChatListCell: UITableViewCell {
         } catch let err {
             print("Error: \(err.localizedDescription)")
         }
-    
-        
         return self
     }
     
