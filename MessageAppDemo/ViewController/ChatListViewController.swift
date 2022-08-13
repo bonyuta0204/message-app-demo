@@ -31,6 +31,9 @@ class ChatListViewController: UIViewController {
         tableView.delegate = self
         tableView.register(UINib(nibName:"ChatListCell", bundle: nil), forCellReuseIdentifier: "cell")
         
+        tableView.estimatedRowHeight = 66
+        tableView.rowHeight = UITableView.automaticDimension
+        
         dataSource = UITableViewDiffableDataSource<Int, Message>(tableView: tableView, cellProvider:  {
             (tableView: UITableView, indexPath: IndexPath, message: Message) -> UITableViewCell? in
             // configure and return cell

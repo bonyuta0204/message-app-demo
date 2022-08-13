@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import MessageKit
 
-struct User {
-    var id: String
-    var name: String
+struct User: SenderType {
+    var senderId: String
+    var displayName: String
     var avatar_url: String
 }

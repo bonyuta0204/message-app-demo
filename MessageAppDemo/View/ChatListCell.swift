@@ -15,9 +15,9 @@ class ChatListCell: UITableViewCell {
     @IBOutlet weak var avatarImage: UIImageView!
     
     func configure(with message: Message)->ChatListCell{
-        userNameLabel.text = message.sender.name
+        userNameLabel.text = message.sender.displayName
         messageContentLabel.text = message.content
-        let url = URL(string: message.sender.avatar_url)
+        let url = URL(string: message.user.avatar_url)
         do {
             let data = try Data(contentsOf: url!)
             let image = UIImage(data: data)

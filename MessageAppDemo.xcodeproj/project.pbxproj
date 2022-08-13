@@ -23,6 +23,7 @@
 		4E6ADD0228A4CCA800ED429F /* ChatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6ADD0128A4CCA800ED429F /* ChatListViewModel.swift */; };
 		4E6ADD0628A503BE00ED429F /* ChatListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6ADD0428A503BE00ED429F /* ChatListCell.swift */; };
 		4E6ADD0728A503BE00ED429F /* ChatListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E6ADD0528A503BE00ED429F /* ChatListCell.xib */; };
+		4E6ADD0928A742A400ED429F /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6ADD0828A742A400ED429F /* ChatViewController.swift */; };
 		E216013A2C20DF603DA3F88D /* Pods_MessageAppDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F1ED2630E418E3094D3BAD /* Pods_MessageAppDemo.framework */; };
 		F719D49E069C8C9BBDB235C7 /* Pods_MessageAppDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EBAB29BE84844800738C0C0 /* Pods_MessageAppDemoTests.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,7 @@
 		4E6ADD0128A4CCA800ED429F /* ChatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewModel.swift; sourceTree = "<group>"; };
 		4E6ADD0428A503BE00ED429F /* ChatListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListCell.swift; sourceTree = "<group>"; };
 		4E6ADD0528A503BE00ED429F /* ChatListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatListCell.xib; sourceTree = "<group>"; };
+		4E6ADD0828A742A400ED429F /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		5AF1983B22248EDC391830EC /* Pods-MessageAppDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageAppDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-MessageAppDemoTests/Pods-MessageAppDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8EBAB29BE84844800738C0C0 /* Pods_MessageAppDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MessageAppDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A06E2FF2F19FFDDE65D24C /* Pods-MessageAppDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageAppDemo.release.xcconfig"; path = "Target Support Files/Pods-MessageAppDemo/Pods-MessageAppDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				4E6ADCCA28A4B61100ED429F /* ChatListViewController.swift */,
+				4E6ADD0828A742A400ED429F /* ChatViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 			files = (
 				4E6ADD0228A4CCA800ED429F /* ChatListViewModel.swift in Sources */,
 				4E6ADCCB28A4B61100ED429F /* ChatListViewController.swift in Sources */,
+				4E6ADD0928A742A400ED429F /* ChatViewController.swift in Sources */,
 				4E6ADCFE28A4CBC800ED429F /* Message.swift in Sources */,
 				4E6ADD0628A503BE00ED429F /* ChatListCell.swift in Sources */,
 				4E6ADCC728A4B61100ED429F /* AppDelegate.swift in Sources */,

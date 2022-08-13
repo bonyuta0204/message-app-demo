@@ -6,18 +6,30 @@
 //
 
 import Foundation
+import MessageKit
 
-struct Message: Identifiable, Hashable{
+struct Message: Identifiable, Hashable, MessageType{
+    var id = UUID().uuidString
+    
+    var user: User
+    
+    var messageId: String
+    
+    var sentDate: Date
+    
+    var kind: MessageKind
+    
     static func == (lhs: Message, rhs: Message) -> Bool {
-        lhs.id == rhs.id
+        lhs.messageId == rhs.messageId
     }
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
+        hasher.combine(messageId)
     }
     
-    var id: String
     var content: String
-    var send_at: Date
-    var sender: User
+    
+    var sender: SenderType {
+      user
+    }
 }
